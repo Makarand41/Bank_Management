@@ -1,0 +1,14 @@
+    .c1 {
+      background-color: #FF8C00;
+      color: black;
+      display: flex; /* Use flexbox to align items horizontally */
+      justify-content: space-around; /* Add space around the links */
+      padding: 10px; /* Optional: Add some padding for better visual appearance */
+      height: 20px;
+      width: 100%;
+    }
+
+    .c1 a {
+      text-decoration: none;
+      color: black;
+    }

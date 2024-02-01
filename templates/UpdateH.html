@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Update User</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    <h1 class="text-center my-3">Update User</h1>
+
+    <form action="/website/do-update-userUP/{{user.id}}/" method="POST">
+
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name">User name</label>
+            <input id="name" type="text" class="form-control" placeholder="Enter user name" name="user_name" value="{{user.name}}" />
+        </div>
+
+        <div class="mb-3">
+            <label for="email">User email</label>
+            <input id="email" type="email" class="form-control" placeholder="Enter user email" name="user_email" value="{{user.email}}" />
+        </div>
+
+        <div class="mb-3">
+            <label for="dob">User Date of Birth</label>
+            <input id="dob" type="date" class="form-control" name="user_dob" value="{{user.dob}}" />
+        </div>
+
+        <div class="mb-3">
+            <label for="amount">User Amount</label>
+            <input id="amount" type="text" class="form-control" placeholder="Enter user amount" name="user_amount" value="{{user.amount}}" />
+        </div>
+
+        <div class="container text-center">
+            <button class="btn btn-success">
+                Update User
+            </button>
+        </div>
+    </form>
+
+</body>
+</html>

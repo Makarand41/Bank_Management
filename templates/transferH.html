@@ -1,0 +1,42 @@
+<!-- transferH.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Transfer Money</title>
+    <!-- Add your CSS styles or include Bootstrap if needed -->
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    <h1 class="text-center my-3">Transfer Money</h1>
+
+    <form action="/website/transferUP/" method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="sender_email">Sender's Email</label>
+            <input id="sender_email" type="email" class="form-control" placeholder="Enter sender's email" name="sender_email" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="recipient_email">Recipient's Email</label>
+            <input id="recipient_email" type="email" class="form-control" placeholder="Enter recipient's email" name="recipient_email" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="transfer_amount">Transfer Amount</label>
+            <input id="transfer_amount" type="number" class="form-control" placeholder="Enter transfer amount" name="transfer_amount" required />
+        </div>
+
+        <div class="container text-center">
+            <button type="submit" class="btn btn-success">
+                Transfer
+            </button>
+        </div>
+    </form>
+
+</body>
+</html>
